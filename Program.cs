@@ -1,7 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/", () => "Go ahead and encrypt or decrypt text!");
+app.MapGet("/encrypt/{plaintext}", (string plaintext) => Encrypt(plaintext));
+app.MapGet("/decrypt/{ciphertext}", (string ciphertext) => Decrypt(ciphertext));
 
 app.Run();
 
