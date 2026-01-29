@@ -9,11 +9,6 @@ public class EncryptionMethods
     // Metod för kryptering
     public string Encrypt(string plaintext)
     {
-        if (string.IsNullOrEmpty(plaintext))
-        {
-            return "You can't encrypt an empty string!";
-        }
-
         string alphabet = "abcdefghijklmnopqrstuvwxyzåäö";
         string shiftedAlphabet = "hijklmnopqrstuvwxyzåäöabcdefg";
         // Initialiserar en tom sträng för chiffertexten
@@ -48,10 +43,6 @@ public class EncryptionMethods
     // Metod för dekryptering - samma som ovan, fast tvärtom
     public string Decrypt(string ciphertext)
     {
-        if (string.IsNullOrEmpty(ciphertext))
-        {
-            return "You can't decrypt an empty string!";
-        }
         string alphabet = "abcdefghijklmnopqrstuvwxyzåäö";
         string shiftedAlphabet = "hijklmnopqrstuvwxyzåäöabcdefg";
         string plaintext = "";
