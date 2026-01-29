@@ -1,4 +1,11 @@
 var builder = WebApplication.CreateBuilder(args);
+
+// Hade problem med deployment till AWS. Hittade den här lösningen på nätet.
+// Problemet verkade vara att appen använde localhost istället för servern.
+
+builder.WebHost.UseKestrel()
+    .UseUrls("http://0.0.0.0:5000");
+
 var app = builder.Build();
 
 // Skapar ett EncryptionsMethods-objekt för att anropa metoderna
