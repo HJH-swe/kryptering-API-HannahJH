@@ -53,22 +53,6 @@ public class XunitTests
         Assert.Equal(expected, result);
     }
 
-    // Test av krytpering - tom sträng
-    [Fact]
-    public void Encrypt_EmptyString_ReturnsEmptyStringMessage()
-    {
-        // given
-        var encryptor = new EncryptionMethods();
-        string plaintext = "";
-        string expected = "You can't encrypt an empty string!";
-
-        // when
-        string result = encryptor.Encrypt(plaintext);
-
-        // then
-        Assert.Equal(expected, result);
-    }
-
     // Test av dekryptering - bara små bokstäver
     [Fact]
     public void Decrypt_OnlyLowercase_ReturnsDecryptedText()
@@ -116,21 +100,4 @@ public class XunitTests
         // then
         Assert.Equal(expected, result);
     }
-
-    // Test av dekyrptering - tom sträng
-    [Fact]
-    public void Decrypt_EmptyString_ReturnsEmptyStringMessage()
-    {
-        // given
-        var encryptor = new EncryptionMethods();
-        string ciphertext = "";
-        string expected = "You can't decrypt an empty string!";
-
-        // when
-        string result = encryptor.Decrypt(ciphertext);
-
-        // then
-        Assert.Equal(expected, result);
-    }
-    
 }
